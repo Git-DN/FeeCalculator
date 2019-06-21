@@ -2,18 +2,20 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-using FeeCalculator.Services.Fee.Model;
+using FeeCalculator.Services.Transactions.Model;
 
 namespace FeeCalculator.Services.Files
 {
     public class FileService
     {
-        public List<Transaction> ReadTransactions(string path, int linesToRead, int linesToSkip)
+        private int _linesToSkip = 0;
+
+        public List<Transaction> ReadTransactions(string path, int linesToRead)
         {
             var transactions = new List<Transaction>();
 
             var lines = File.ReadLines(path)
-                .Skip(linesToSkip)
+                .Skip(_linesToSkip)
                 .Take(linesToRead);
 
             foreach (var line in lines)
@@ -22,7 +24,7 @@ namespace FeeCalculator.Services.Files
 
                 if (lineData.Count() != 3)
                 {
-                    throw new InconsistentTransactionEntriesException(line, line);
+                    throw new InconsistentTransactionEntriesException($"lineData count: {lineData.Count()}, expected: 3", line);
                 }
 
                 transactions.Add(new Transaction()
@@ -32,6 +34,8 @@ namespace FeeCalculator.Services.Files
                     Amount = decimal.Parse(lineData[2]),
                 });
             }
+
+            _linesToSkip += linesToRead;
 
             return transactions;
         }

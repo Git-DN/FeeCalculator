@@ -6,7 +6,7 @@ namespace FeeCalculator.Services.Files
     [Serializable]
     internal class InconsistentTransactionEntriesException : Exception
     {
-        public string LineData { get; private set; }
+        public string Line { get; private set; }
 
         public InconsistentTransactionEntriesException()
         {
@@ -16,9 +16,9 @@ namespace FeeCalculator.Services.Files
         {
         }
 
-        public InconsistentTransactionEntriesException(string message, string lineData) : this(message)
+        public InconsistentTransactionEntriesException(string message, string line) : this(message)
         {
-            LineData = lineData;
+            Line = line;
         }
 
         public InconsistentTransactionEntriesException(string message, Exception innerException) : base(message, innerException)

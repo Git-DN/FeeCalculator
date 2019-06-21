@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeeCalculator", "FeeCalcula
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeeCalculator.Services", "FeeCalculator.Services\FeeCalculator.Services.csproj", "{3DDAF01F-E34E-4CFD-B462-CCA68BBEAE61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeeCalculator.Tests", "FeeCalculator.Tests\FeeCalculator.Tests.csproj", "{78BC418D-792F-4B01-AB1F-3542B2F00BE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3DDAF01F-E34E-4CFD-B462-CCA68BBEAE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DDAF01F-E34E-4CFD-B462-CCA68BBEAE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DDAF01F-E34E-4CFD-B462-CCA68BBEAE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78BC418D-792F-4B01-AB1F-3542B2F00BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78BC418D-792F-4B01-AB1F-3542B2F00BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78BC418D-792F-4B01-AB1F-3542B2F00BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78BC418D-792F-4B01-AB1F-3542B2F00BE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
